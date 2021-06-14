@@ -1,0 +1,10 @@
+{
+  "valid": false,
+  "errors": [
+    {
+      "ruleRef": "require-mutation",
+      "message": "Mutation type is required"
+    }
+  ],
+  "warnings": []
+}

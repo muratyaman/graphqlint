@@ -1,0 +1,13 @@
+{
+  "disabledRuleRefs": [
+    "require-schema-def"
+  ],
+  "scalarNameCase": "pascal",
+  "directiveNameCase": "lower",
+  "typeNameCase": "pascal",
+  "typeFieldNameCase": "camel",
+  "interfaceNameCase": "pascal",
+  "interfaceFieldNameCase": "lower",
+  "enumNameCase": "pascal",
+  "enumValueCase": "upper"
+}

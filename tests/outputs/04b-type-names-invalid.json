@@ -1,0 +1,18 @@
+{
+  "valid": false,
+  "errors": [
+    {
+      "ruleRef": "check-type-names",
+      "message": "Invalid type name: expecting PascalCase for type \"user\"",
+      "line": 1,
+      "column": 1
+    },
+    {
+      "ruleRef": "check-type-names",
+      "message": "Invalid type name: expecting PascalCase for type \"User_Profile\"",
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "warnings": []
+}

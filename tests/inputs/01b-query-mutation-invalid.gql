@@ -1,0 +1,7 @@
+type MyQuery {
+  hello: String!
+}
+
+type MyMutation {
+  view(id: ID!): Int!
+}

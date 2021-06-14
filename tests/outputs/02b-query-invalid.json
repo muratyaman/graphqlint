@@ -1,0 +1,10 @@
+{
+  "valid": false,
+  "errors": [
+    {
+      "ruleRef": "require-query",
+      "message": "Query type is required"
+    }
+  ],
+  "warnings": []
+}

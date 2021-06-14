@@ -1,0 +1,12 @@
+schema {
+  query: MyQuery
+  mutation: MyMutation
+}
+
+type MyQuery {
+  hello: String!
+}
+
+type MyMutation {
+  view(id: ID!): Int!
+}

@@ -1,0 +1,19 @@
+type Query {
+  me: user!
+}
+
+type Mutation {
+  view(id: ID!): Int!
+}
+
+type user {
+  id: ID!
+  username: String!
+  profile: User_Profile!
+}
+
+type User_Profile {
+  firstName: String!
+  lastName: String!
+  emails: [String!]!
+}

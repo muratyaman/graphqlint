@@ -1,0 +1,18 @@
+{
+  "valid": false,
+  "errors": [
+    {
+      "ruleRef": "require-schema",
+      "message": "Schema definition is required"
+    },
+    {
+      "ruleRef": "require-mutation",
+      "message": "Mutation type is required"
+    },
+    {
+      "ruleRef": "require-query",
+      "message": "Query type is required"
+    }
+  ],
+  "warnings": []
+}
