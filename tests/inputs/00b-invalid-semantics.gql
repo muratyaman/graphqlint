@@ -1,0 +1,15 @@
+type Query {
+  hello: String!
+  hello: Int!
+  me1: User!
+  me2: UseR! # invalid type ref
+}
+
+type Mutation {
+  view(id: ID!): Int!
+}
+
+type User {
+  id: ID!
+  firstName: Date # invalid scalar ref
+}

@@ -14,6 +14,6 @@ type user {
 
 type User_Profile {
   firstName: String!
-  lastName: String!
-  emails: [String!]!
+  LastName: String!
+  EMAILS: [String!]!
 }

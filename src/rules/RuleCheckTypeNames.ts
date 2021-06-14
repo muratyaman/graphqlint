@@ -1,5 +1,5 @@
+import { visit, getLocation } from 'graphql/language';
 import { GraphQLintRuleInput, GraphQLintOutput, GraphQLintRule, RuleRefType } from '../types';
-import { getObjectTypeDefs } from '../gql';
 import { checkName } from '../str';
 
 export class RuleCheckTypeNames implements GraphQLintRule {
@@ -13,19 +13,26 @@ export class RuleCheckTypeNames implements GraphQLintRule {
 
   check(input: GraphQLintRuleInput, output: GraphQLintOutput): boolean {
     let errCount = 0;
-    const objDefs = getObjectTypeDefs(input.ast.definitions ?? []);
     const { typeNameCase } = input.config;
-    for (const objDef of objDefs) {
-      if (!checkName(objDef.name.value, typeNameCase)) {
-        errCount++;
-        const location = { line: 1, column: 1 }; // TODO
-        output.errors.push({
-          ruleRef: this.ruleRef,
-          message: this.message + ': expecting ' + typeNameCase + ' for type "' + objDef.name.value + '"',
-          ...location,
-        });
+    const { ruleRef, message } = this;
+
+    visit(input.ast, {
+      ObjectTypeDefinition(node) {
+        if (!checkName(node.name.value, typeNameCase)) {
+          errCount++;
+          if (node.loc) {
+            const { line, column } = getLocation(input.source, node.loc?.start);
+            output.errors.push({
+              ruleRef,
+              message: message + ': expecting ' + typeNameCase + ' for type "' + node.name.value + '"',
+              line,
+              column,
+            });
+          }
+        }
       }
-    }
+    });
+
     return errCount === 0;
   }
 }

@@ -16,10 +16,10 @@ describe('GraphQLint', () => {
   }
 
   function lintAndCheck(inputFile: string, outputFile = validOutput, config: GraphQLintConfig | null = null): void {
-    const gl = new GraphQLint(config);
-    const source = inputs[inputFile];
-    const input  = { source };
-    const output = gl.lint(input);
+    const gl         = new GraphQLint(config);
+    const sourceText = inputs[inputFile];
+    const input      = { sourceText };
+    const output     = gl.lint(input);
     expectation(output, outputFile);
   }
 

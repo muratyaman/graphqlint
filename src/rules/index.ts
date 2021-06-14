@@ -4,6 +4,7 @@ export * from './RuleRequireSchemaDef';
 export * from './RuleCheckTypeNames';
 
 import { GraphQLintRule } from '../types';
+import { RuleCheckTypeFieldNames } from './RuleCheckTypeFieldNames';
 import { RuleCheckTypeNames } from './RuleCheckTypeNames';
 import { RuleRequireMutationType } from './RuleRequireMutationType';
 import { RuleRequireQueryType } from './RuleRequireQueryType';
@@ -15,5 +16,6 @@ export default function rules(): GraphQLintRule[] {
     new RuleRequireMutationType(),
     new RuleRequireQueryType(),
     new RuleCheckTypeNames(),
+    new RuleCheckTypeFieldNames(),
   ];
 }

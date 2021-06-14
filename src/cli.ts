@@ -1,36 +1,61 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
+import glob from 'glob';
 import chalk from 'chalk';
 import icons from 'log-symbols';
 import { GraphQLint } from './GraphQLint';
 import { GraphQLintInfo } from './types';
 
 export function cli(args: string[] = [], logger = console): number {
+  let errCount = 0;
+
+  try {
+
+    const filePattern = 2 in args ? args[2] : '*.gql';
+    const filePaths = glob.sync(filePattern);
+    if (!filePaths || filePaths.length === 0) throw new Error('GraphQL schema file/pattern is required');
+
+    for (const filePath of filePaths) {
+      errCount += lintFile(filePath);
+    }
+    
+
+  } catch (err) {
+
+    errCount++;
+    logger.error(err.message);
+  }
+
+  return errCount;
+}
+
+export function lintFile(gqlFile: string, logger = console): number {
   let exitCode = 0;
 
   try {
 
-    const [node, thisFile, gqlFile] = args;
-    if (!gqlFile) throw new Error('GraphQL schema file is required');
-
     const fp = resolve(gqlFile);
     if (!existsSync(fp)) throw new Error('File does not exist: ' + fp);
     
+    logger.info(fp);
+
     const printError = makePrintError(logger);
     const printWarning = makePrintWarning(logger);
 
-    const source = readFileSync(fp).toString();
+    const sourceText = readFileSync(fp).toString();
     const config = {};
     const gl = new GraphQLint(config);
-    const output = gl.lint({ source });
+    const output = gl.lint({ sourceText });
+
     if (!output.valid) {
       const ec = output.errors.length;
       const wc = output.warnings.length;
       if (ec) output.errors.forEach(printError);
       if (wc) output.warnings.forEach(printWarning);
       logger.log('');
+      const probs = ec + wc;
       const summary = icons.error + ' ' +
-        wc + ' problem' + (wc === 1 ? '': 's') +
+        probs + ' problem' + (probs === 1 ? '': 's') +
         ' (' +
         ec + ' error' + (ec === 1 ? '' : 's') + ', ' +
         wc + ' warning' + (wc === 1 ? '' : 's') +

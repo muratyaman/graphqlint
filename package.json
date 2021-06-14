@@ -1,6 +1,6 @@
 {
   "name": "graphqlint",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "GraphQLint is for linting schema files against certain rules and conventions - aim to integrate with ESLint and VSCode",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,8 +20,17 @@
     "lint": "eslint ./src",
     "test": "mocha",
     "test:coverage": "nyc npm run test",
-    "sample01a": "node ./bin/index.js ./tests/inputs/01a-query-mutation.gql",
-    "sample01b": "node ./bin/index.js ./tests/inputs/01b-query-mutation-invalid.gql"
+    "sample:00a": "node ./bin/index.js ./tests/inputs/00a-invalid-syntax.gql",
+    "sample:00b": "node ./bin/index.js ./tests/inputs/00b-invalid-semantics.gql",
+    "sample:01a": "node ./bin/index.js ./tests/inputs/01a-query-mutation.gql",
+    "sample:01b": "node ./bin/index.js ./tests/inputs/01b-query-mutation-invalid.gql",
+    "sample:02a": "node ./bin/index.js ./tests/inputs/02a-query.gql",
+    "sample:02b": "node ./bin/index.js ./tests/inputs/02b-query-invalid.gql",
+    "sample:03a": "node ./bin/index.js ./tests/inputs/03a-mutation.gql",
+    "sample:03b": "node ./bin/index.js ./tests/inputs/03b-mutation-invalid.gql",
+    "sample:04a": "node ./bin/index.js ./tests/inputs/04a-type-names.gql",
+    "sample:04b": "node ./bin/index.js ./tests/inputs/04b-type-names-invalid.gql",
+    "sample:all": "node ./bin/index.js './tests/**/*.gql'"
   },
   "repository": {
     "type": "git",
@@ -54,17 +63,15 @@
     "chai": "^4.3.4",
     "eslint": "^7.28.0",
     "glob": "^7.1.7",
-    "graphql": "^15.5.0",
     "mocha": "^9.0.0",
     "nyc": "^15.1.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2"
   },
-  "peerDependencies": {
-    "graphql": "^15.5.0"
-  },
+  "peerDependencies": {},
   "dependencies": {
     "chalk": "^4.1.1",
+    "graphql": "^15.5.0",
     "log-symbols": "^4.1.0"
   }
 }
