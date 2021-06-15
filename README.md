@@ -41,3 +41,10 @@ npm run sample:01b
 # multiple files
 npm run sample:all
 ```
+
+## usage
+
+```sh
+npm i -g graphqlint
+graphqlint path/to/your/schema.gql
+```
