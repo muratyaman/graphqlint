@@ -2,12 +2,13 @@
   "disabledRuleRefs": [
     "require-schema-def"
   ],
-  "scalarNameCase": "pascal",
-  "directiveNameCase": "lower",
-  "typeNameCase": "pascal",
-  "typeFieldNameCase": "camel",
-  "interfaceNameCase": "pascal",
-  "interfaceFieldNameCase": "lower",
-  "enumNameCase": "pascal",
-  "enumValueCase": "upper"
+  "scalarNameCase": "PascalCase",
+  "directiveNameCase": "lower_case",
+  "typeNameCase": "PascalCase",
+  "typeFieldNameCase": "camelCase",
+  "interfaceNameCase": "PascalCase",
+  "interfaceFieldNameCase": "lower_case",
+  "unionNameCase": "PascalCase",
+  "enumNameCase": "PascalCase",
+  "enumValueCase": "UPPER_CASE"
 }

@@ -1,0 +1,19 @@
+type Query {
+  me: USER_OUTPUT!
+}
+
+type Mutation {
+  view(id: ID!): Int!
+}
+
+union USER_OUTPUT = User | Error
+
+type User {
+  id: ID!
+  username: String!
+}
+
+type Error {
+  code: String!
+  message: String!
+}

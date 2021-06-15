@@ -1,0 +1,24 @@
+{
+  "valid": false,
+  "errors": [
+    {
+      "message": "Field \"Query.hello\" can only be defined once.",
+      "ruleRef": "graphql-semantics",
+      "line": 0,
+      "column": 0
+    },
+    {
+      "message": "Unknown type \"UseR\". Did you mean \"User\"?",
+      "ruleRef": "graphql-semantics",
+      "line": 0,
+      "column": 0
+    },
+    {
+      "message": "Unknown type \"Date\".",
+      "ruleRef": "graphql-semantics",
+      "line": 0,
+      "column": 0
+    }
+  ],
+  "warnings": []
+}

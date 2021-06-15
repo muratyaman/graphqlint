@@ -23,6 +23,14 @@ describe('GraphQLint', () => {
     expectation(output, outputFile);
   }
 
+  it('should lint schema with invalid syntax', () => {
+    lintAndCheck('00a-invalid-syntax.gql', '00a-invalid-syntax.json');
+  });
+
+  it('should lint schema with invalid semantics', () => {
+    lintAndCheck('00b-invalid-semantics.gql', '00b-invalid-semantics.json');
+  });
+
   it('should lint schema without schema, query and mutation - default config', () => {
     lintAndCheck('01a-query-mutation.gql'); // default settings: disable require-schema
   });
@@ -57,5 +65,21 @@ describe('GraphQLint', () => {
 
   it('should lint schema with types - invalid names', () => {
     lintAndCheck('04b-type-names-invalid.gql', '04b-type-names-invalid.json');
+  });
+
+  it('should lint schema with interfaces', () => {
+    lintAndCheck('05a-interfaces.gql');
+  });
+
+  it('should lint schema with interfaces - invalid names', () => {
+    lintAndCheck('05b-interfaces-invalid.gql', '05b-interfaces-invalid.json');
+  });
+
+  it('should lint schema with unions', () => {
+    lintAndCheck('06a-unions.gql');
+  });
+
+  it('should lint schema with unions - invalid names', () => {
+    lintAndCheck('06b-unions-invalid.gql', '06b-unions-invalid.json');
   });
 });

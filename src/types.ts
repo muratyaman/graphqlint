@@ -28,6 +28,7 @@ export interface GraphQLintConfig {
   typeFieldNameCase?: NameCaseType;
   interfaceNameCase?: NameCaseType;
   interfaceFieldNameCase?: NameCaseType;
+  unionNameCase?: NameCaseType;
   enumNameCase?: NameCaseType;
   enumValueCase?: NameCaseType;
 }

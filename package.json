@@ -1,6 +1,6 @@
 {
   "name": "graphqlint",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "GraphQLint is for linting schema files against certain rules and conventions - aim to integrate with ESLint and VSCode",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,6 +30,10 @@
     "sample:03b": "node ./bin/index.js ./tests/inputs/03b-mutation-invalid.gql",
     "sample:04a": "node ./bin/index.js ./tests/inputs/04a-type-names.gql",
     "sample:04b": "node ./bin/index.js ./tests/inputs/04b-type-names-invalid.gql",
+    "sample:05a": "node ./bin/index.js ./tests/inputs/05a-interfaces.gql",
+    "sample:05b": "node ./bin/index.js ./tests/inputs/05b-interfaces-invalid.gql",
+    "sample:06a": "node ./bin/index.js ./tests/inputs/06a-unions.gql",
+    "sample:06b": "node ./bin/index.js ./tests/inputs/06b-unions-invalid.gql",
     "sample:all": "node ./bin/index.js './tests/**/*.gql'"
   },
   "repository": {

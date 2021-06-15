@@ -1,0 +1,54 @@
+{
+  "valid": false,
+  "errors": [
+    {
+      "ruleRef": "check-type-field-names",
+      "message": "Invalid type field name: expecting camelCase for field \"User.ID\"",
+      "line": 14,
+      "column": 3
+    },
+    {
+      "ruleRef": "check-type-field-names",
+      "message": "Invalid type field name: expecting camelCase for field \"Post.Model\"",
+      "line": 33,
+      "column": 3
+    },
+    {
+      "ruleRef": "check-type-field-names",
+      "message": "Invalid type field name: expecting camelCase for field \"Post.TEXT\"",
+      "line": 34,
+      "column": 3
+    },
+    {
+      "ruleRef": "check-type-field-names",
+      "message": "Invalid type field name: expecting camelCase for field \"Page.TEXT\"",
+      "line": 40,
+      "column": 3
+    },
+    {
+      "ruleRef": "check-interface-names",
+      "message": "Invalid interface name: expecting PascalCase for type \"content\"",
+      "line": 25,
+      "column": 1
+    },
+    {
+      "ruleRef": "check-interface-field-names",
+      "message": "Invalid interface field name: expecting lower_case for field \"NODE.ID\"",
+      "line": 10,
+      "column": 3
+    },
+    {
+      "ruleRef": "check-interface-field-names",
+      "message": "Invalid interface field name: expecting lower_case for field \"content.Model\"",
+      "line": 27,
+      "column": 3
+    },
+    {
+      "ruleRef": "check-interface-field-names",
+      "message": "Invalid interface field name: expecting lower_case for field \"content.TEXT\"",
+      "line": 28,
+      "column": 3
+    }
+  ],
+  "warnings": []
+}

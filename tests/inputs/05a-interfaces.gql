@@ -1,0 +1,41 @@
+type Query {
+  me: User!
+}
+
+type Mutation {
+  view(id: ID!): Int!
+}
+
+interface Node {
+  id: ID!
+}
+
+type User implements Node {
+  id: ID!
+  username: String!
+  profile: UserProfile!
+}
+
+type UserProfile {
+  firstName: String!
+  lastName: String!
+  emails: [String!]!
+}
+
+interface Content {
+  id: ID!
+  model: String! 
+  text: String!
+}
+
+type Post implements Content {
+  id: ID!
+  model: String!
+  text: String!
+}
+
+type Page implements Content {
+  id: ID!
+  model: String!
+  text: String!
+}

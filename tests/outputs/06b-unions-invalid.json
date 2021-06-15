@@ -1,0 +1,12 @@
+{
+  "valid": false,
+  "errors": [
+    {
+      "ruleRef": "check-union-names",
+      "message": "Invalid union name: expecting PascalCase for type \"USER_OUTPUT\"",
+      "line": 9,
+      "column": 1
+    }
+  ],
+  "warnings": []
+}

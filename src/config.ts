@@ -10,6 +10,7 @@ export const defaultConfig = (): GraphQLintConfigRequired => ({
   typeFieldNameCase: 'camelCase',
   interfaceNameCase: 'PascalCase',
   interfaceFieldNameCase: 'lower_case',
+  unionNameCase: 'PascalCase',
   enumNameCase: 'PascalCase',
   enumValueCase: 'UPPER_CASE',
 });
