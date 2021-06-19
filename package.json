@@ -77,5 +77,8 @@
     "glob": "^7.1.7",
     "graphql": "^15.5.0",
     "log-symbols": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
