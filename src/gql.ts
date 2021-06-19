@@ -37,7 +37,7 @@ export function checkFieldNames(
         const { line, column } = getLocation(source, field.loc?.start);
         errors.push({
           ruleRef,
-          message: messagePrefix + ': expecting ' + nameCase + ' for field "' + nodeName + '.' + field.name.value + '"',
+          message: messagePrefix + ': expecting ' + nameCase + ' for field name "' + nodeName + '.' + field.name.value + '"',
           line,
           column,
         });

@@ -10,6 +10,8 @@ export type RuleRefType =
   | 'require-schema'
   | 'require-query'
   | 'require-mutation'
+  | 'check-scalar-names'
+  | 'check-directive-names'
   | 'check-type-names'
   | 'check-type-field-names'
   | 'check-interface-names'

@@ -1,5 +1,7 @@
+export * from './RuleCheckDirectiveNames';
 export * from './RuleCheckInterfaceFieldNames';
 export * from './RuleCheckInterfaceNames';
+export * from './RuleCheckScalarNames';
 export * from './RuleCheckTypeFieldNames';
 export * from './RuleCheckTypeNames';
 export * from './RuleCheckUnionNames';
@@ -8,8 +10,10 @@ export * from './RuleRequireQueryType';
 export * from './RuleRequireSchemaDef';
 
 import { GraphQLintRule } from '../types';
+import { RuleCheckDirectiveNames } from './RuleCheckDirectiveNames';
 import { RuleCheckInterfaceFieldNames } from './RuleCheckInterfaceFieldNames';
 import { RuleCheckInterfaceNames } from './RuleCheckInterfaceNames';
+import { RuleCheckScalarNames } from './RuleCheckScalarNames';
 import { RuleCheckTypeFieldNames } from './RuleCheckTypeFieldNames';
 import { RuleCheckTypeNames } from './RuleCheckTypeNames';
 import { RuleCheckUnionNames } from './RuleCheckUnionNames';
@@ -27,5 +31,7 @@ export default function rules(): GraphQLintRule[] {
     new RuleCheckInterfaceNames(),
     new RuleCheckInterfaceFieldNames(),
     new RuleCheckUnionNames(),
+    new RuleCheckScalarNames(),
+    new RuleCheckDirectiveNames(),
   ];
 }

@@ -3,7 +3,7 @@
   "errors": [
     {
       "ruleRef": "check-union-names",
-      "message": "Invalid union name: expecting PascalCase for type \"USER_OUTPUT\"",
+      "message": "Invalid union name: expecting PascalCase for union name \"USER_OUTPUT\"",
       "line": 9,
       "column": 1
     }

@@ -24,7 +24,7 @@ export class RuleCheckUnionNames implements GraphQLintRule {
             const { line, column } = getLocation(input.source, node.loc?.start ?? 0);
             output.errors.push({
               ruleRef,
-              message: message + ': expecting ' + nameCase + ' for type "' + node.name.value + '"',
+              message: message + ': expecting ' + nameCase + ' for union name "' + node.name.value + '"',
               line,
               column,
             });
